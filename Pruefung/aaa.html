@@ -8,21 +8,19 @@
 </head>
 <body>
 
+<div class="container">
 <div>
 <h1>Lieferkostenrechner</h1>
 <h2>Lieferkosten für Sonderartikel brechnen</h2>
 <p>Für Lieferung von Artikeln, die <b>nicht</b> in den Artikelstammdaten vorkommen,kann das folgende Formularzur Berechnung der Lieferkosten herangrzogen werden:</p>
 </div>
 
-<div>
-
-    <label for="ware">Warenwert:</label> <br>
+    <div class="col">
+    <label for="ware" class="mb-3" >Warenwert:</label><br>
     <input type="number" id="ware">
     <br><br>
-
-
     <label for="Post">Postleitzahlengebiet-Auswahl:</label> <br>
-    <select name="Post" id="Post" class="form-select" aria-label="Default select example">
+    <select name="Post" id="Post" class="form-select">
         <option selected>PLZ-Gebiet:</option>
         <option value="0: Leipzig">0: Leipzig</option>
         <option value="1: Berlin">1: Berlin</option>
@@ -34,40 +32,23 @@
         <option value="7: Stuttgart">7: Stuttgart</option>
         <option value="8: München">8: München</option>
     </select>
-    <tr>
-        <th><img src="../foto/256px-Postcode_map_sample_germany.png"</th>
-    </tr>
-</div>
+    <br><br>
+        <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Expresslieferung</label>
+    </div>
 
+    <div class="col">
+        <img src="../foto/256px-Postcode_map_sample_germany.png"
+    </div>
+
+    </div>
+</div>
 
 <div>
-
-
+    <button type="submit" class="btn btn-primary">Kosten brechnen</button>
 </div>
 
-<form>
-    <fieldset disabled>
-        <legend>Disabled fieldset example</legend>
-        <div class="mb-3">
-            <label for="disabledTextInput" class="form-label">Disabled input</label>
-            <input type="text" id="disabledTextInput" class="form-control" placeholder="Disabled input">
-        </div>
-        <div class="mb-3">
-            <label for="disabledSelect" class="form-label">Disabled select menu</label>
-            <select id="disabledSelect" class="form-select">
-                <option>Disabled select</option>
-            </select>
-        </div>
-        <div class="mb-3">
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="disabledFieldsetCheck" disabled>
-                <label class="form-check-label" for="disabledFieldsetCheck">
-                    Can't check this
-                </label>
-            </div>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </fieldset>
-</form>
+
 </body>
 </html>
