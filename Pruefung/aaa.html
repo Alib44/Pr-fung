@@ -1,54 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
+    <meta name="author" content="Aliasghar Allameh">
     <meta charset="UTF-8">
     <title>Lieferkostenkulation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">">
     <script src="aa.js"></script>
+    <link rel="stylesheet" href="aaaa.css">
 </head>
 <body>
 
-<div class="container">
 <div>
-<h1>Lieferkostenrechner</h1>
-<h2>Lieferkosten für Sonderartikel brechnen</h2>
-<p>Für Lieferung von Artikeln, die <b>nicht</b> in den Artikelstammdaten vorkommen,kann das folgende Formularzur Berechnung der Lieferkosten herangrzogen werden:</p>
-</div>
-
-    <div class="col">
-    <label for="ware" class="mb-3" >Warenwert:</label><br>
-    <input type="number" id="ware">
-    <br><br>
-    <label for="Post">Postleitzahlengebiet-Auswahl:</label> <br>
-    <select name="Post" id="Post" class="form-select">
-        <option selected>PLZ-Gebiet:</option>
-        <option value="0: Leipzig">0: Leipzig</option>
-        <option value="1: Berlin">1: Berlin</option>
-        <option value="2: Bremen">2: Bremen</option>
-        <option value="3: hannover">3: hannover</option>
-        <option value="4: Essen">4: Essen</option>
-        <option value="5: Köln">5: Köln</option>
-        <option value="6: Frankfurt">6: Frankfurt</option>
-        <option value="7: Stuttgart">7: Stuttgart</option>
-        <option value="8: München">8: München</option>
-    </select>
-    <br><br>
-        <div class="mb-3 form-check">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-        <label class="form-check-label" for="exampleCheck1">Expresslieferung</label>
-    </div>
-
-    <div class="col">
-        <img src="../foto/256px-Postcode_map_sample_germany.png"
-    </div>
-
-    </div>
-</div>
-
-<div>
-    <button type="submit" class="btn btn-primary">Kosten brechnen</button>
+    <h1>Lieferkostenrechner</h1>
+    <h2>Lieferkosten für Sonderartikel brechnen</h2>
+    <p>Für Lieferung von Artikeln, die <b>nicht</b> in den Artikelstammdaten vorkommen,kann das folgende Formularzur Berechnung der Lieferkosten herangrzogen werden:</p>
 </div>
 
 
+<div class="leftside col-8">
+
+    <form>
+        <div>
+            <label for="waren" class="labelabstand"> Warenwert: </label><br>
+            <input type="text" id="waren" placeholder="Warenwert in Euro eingeben!"> <br>
+        </div>
+
+        <div class="mt-2">
+            <label for="plz" class="labelabstand" >Postleitzahlengebiet-Auswahl:</label><br>
+        </div>
+
+        <div>
+            <select name="plzgebiete" id="plz">
+                <option value="Leipzig">0: Leipzig</option>
+                <option value="Berlin">1: Berlin</option>
+                <option value="Bremen">2: Bremen</option>
+                <option value="Hannover">3: Hannover</option>
+                <option value="Essen">4: Essen</option>
+                <option value="Köln">5: Köln</option>
+                <option value="Frankfurt">6: Frankfurt</option>
+                <option value="Stuttgat">7: Stuttgat </option>
+                <option value="München">8: München </option>
+            </select>
+        </div>
+        <br>
+
+        <div class="mt-4">
+            <a target="_blank" href="https://www.plz-suche.org/de/plz-karte">PLZ-Gebiet:(externer Link)</a> <br>
+            <input type="checkbox" id="express"> <label>Expresslieferung</label>
+        </div>
+    </form>
+</div>
+
+<div class="rightside col-4">
+    <img src="../foto/256px-Postcode_map_sample_germany.png" alt="Postleitzahlen-Gebiete"><br>
+    <a href="#" class="text-primary"><label>Quelle: </label><label class="text-info">GfK Geomarketing</label></a>
+</div>
+
+<br><br>
+<div class="outputside">
+    <form>
+        <div class="btn btn-primary"><button type="button" onclick="lkRechnung()">Kosten berechnen</button></div>
+        <br>
+        <div>
+            <label for="kosten">ermittelte Lieferkosten in Euro:</label>
+            <output id="kosten"></output>
+        </div>
+    </form>
+</div>
+</body>
+
+</html>
 </body>
 </html>
